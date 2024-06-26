@@ -3,7 +3,7 @@ import "./BettingComponentStyle.css";
 
 const BettingComponent = () => {
   const [bankBalance, setBankBalance] = useState(0);
-  const [poolBalance, setPoolBalance] = useState(60);
+  const [poolBalance, setPoolBalance] = useState(0);
   const [currentColor, setCurrentColor] = useState("");
   const [betOnRed, setBetRed] = useState(0);
   const [betOnGreen, setBetGreen] = useState(0);
@@ -16,20 +16,21 @@ const BettingComponent = () => {
     const interval = setInterval(() => {
       handleRound();
       handleColor();
-      setBetGreen(0)
-      setBetRed(0)
-      setWin('')
+      setBetGreen(0);
+      setBetRed(0);
+      setWin('');
     }, 60000);
 
     return () => clearInterval(interval);
-  }, [totalBets]);
+  }, []);
 
   const handleColor = () => {
     const randomNumber = String(Math.random()).slice(2, 3);
-
-    if (Number(randomNumber) % 2 === 0 && randomNumber > 0)
+    if (Number(randomNumber) % 2 === 0 && randomNumber > 0) {
       setCurrentColor("red");
-    else setCurrentColor("green");
+    } else {
+      setCurrentColor("green");
+    }
   };
 
   const handleRound = () => {
