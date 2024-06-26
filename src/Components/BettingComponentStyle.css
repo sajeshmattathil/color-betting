@@ -69,13 +69,5 @@
     transform: scale(0.95);
   }
   
-  .buttons button:first-of-type {
-    border: 2px solid red;
-    background-color: #ffe5e5;
-  }
-  
-  .buttons button:last-of-type {
-    border: 2px solid green;
-    background-color: #e5ffe5;
-  }
+ 
   

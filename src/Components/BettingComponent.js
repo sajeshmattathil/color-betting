@@ -19,7 +19,7 @@ const BettingComponent = () => {
       setBetGreen(0)
       setBetRed(0)
       setWin('')
-    }, 4000);
+    }, 60000);
 
     return () => clearInterval(interval);
   }, [totalBets]);
